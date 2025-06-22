@@ -105,7 +105,7 @@ function Dashboard() {
   }
 
   return (
-    <div className='mt-[140px] my-8 mx-4 p-8  bg-white font-bold'>
+    <div className='mt-[240px] mx-4 p-8  bg-white font-bold md:mt-[140px]'>
       <h1 className='text-5xl mb-8 text-amber-400 text-center'>
         User Dashboard
       </h1>

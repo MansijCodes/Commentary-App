@@ -34,12 +34,12 @@ function MessageCard({ message, onMessageDelete }: MessageCardProps) {
 
   return (
     <Card className='px-6 py-9 bg-gray-100'>
-      <CardHeader>
+      <CardHeader className='relative'>
         <AlertDialog>
           <AlertDialogTrigger asChild>
             <Button
               variant='destructive'
-              className=' absolute max-w-[30px] justify-self-end'
+              className=' absolute max-w-[30px] justify-self-end right-0'
             >
               <X className='w-5 h-5' />
             </Button>
@@ -63,12 +63,17 @@ function MessageCard({ message, onMessageDelete }: MessageCardProps) {
           </AlertDialogContent>
         </AlertDialog>
 
-        <CardTitle className='mt-4 text-blue-900'>
+        <CardTitle
+          className='mt-4 text-blue-900'
+          style={{ overflowWrap: 'anywhere' }}
+        >
           ID: {message._id as string}
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className='text-cyan-800 text-4xl'>{message.content}</p>
+        <p className='text-cyan-800 text-4xl max-sm:text-2xl '>
+          {message.content}
+        </p>
       </CardContent>
     </Card>
   );
